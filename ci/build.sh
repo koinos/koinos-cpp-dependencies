@@ -3,6 +3,8 @@
 set -e
 set -x
 
+which python
+
 mkdir build
 cd build
 
