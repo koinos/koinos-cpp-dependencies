@@ -5,3 +5,5 @@ if [ "$CC" = "clang-11" ]; then
    sudo apt-add-repository 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
    sudo apt-get install -y llvm-11 clang-11
 fi
+
+pip3 install gitpython
