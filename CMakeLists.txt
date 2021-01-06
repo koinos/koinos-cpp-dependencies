@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10.2)
 
 include("cmake/HunterGate.cmake")
 
-option(HUNTER_RUN_UPLOAD "Upload cache binaries" OFF)
+option(HUNTER_RUN_UPLOAD "Upload cache binaries" ON)
 
 HunterGate(
    URL "https://github.com/cpp-pm/hunter/archive/v0.23.287.tar.gz"
