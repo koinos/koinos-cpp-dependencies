@@ -20,6 +20,8 @@ set(
    "Hunter passwords"
 )
 
+set(HUNTER_DISABLE_BUILDS YES)
+
 HunterGate(
    URL "https://github.com/koinos/hunter/archive/rocksdb.tar.gz"
    SHA1 "b5dc3af780ba255ee6103bfc306403738735f420"
