@@ -18,8 +18,6 @@ set(
    "Hunter passwords"
 )
 
-set(HUNTER_DISABLE_BUILDS YES)
-
 include("cmake/HunterGate.cmake")
 
 HunterGate(
