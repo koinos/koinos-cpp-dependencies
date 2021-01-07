@@ -5,14 +5,6 @@ include("cmake/HunterGate.cmake")
 option(HUNTER_RUN_UPLOAD "Upload cache binaries" ON)
 
 set(
-   HUNTER_CACHE_SERVERS
-   "https://github.com/koinos/hunter-cache"
-   CACHE
-   STRING
-   "Default cache server"
-)
-
-set(
    HUNTER_PASSWORDS_PATH
    "${CMAKE_CURRENT_LIST_DIR}/cmake/Hunter/passwords.cmake"
    CACHE
@@ -26,6 +18,14 @@ HunterGate(
    URL "https://github.com/koinos/hunter/archive/rocksdb.tar.gz"
    SHA1 "b5dc3af780ba255ee6103bfc306403738735f420"
    LOCAL
+)
+
+set(
+   HUNTER_CACHE_SERVERS
+   "https://github.com/koinos/hunter-cache"
+   CACHE
+   STRING
+   "Default cache server"
 )
 
 project(koinos-cpp-dependencies)
