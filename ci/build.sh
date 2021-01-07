@@ -6,6 +6,9 @@ set -x
 which python
 python --version
 
+which pip
+pip --version
+
 mkdir build
 cd build
 
