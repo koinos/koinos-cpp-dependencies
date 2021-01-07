@@ -7,4 +7,8 @@ if [ "$CC" = "clang-11" ]; then
 fi
 
 pip3 install --user gitpython
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+
+# Should just uninstall python 2.7 for 18.04
+sudo apt-get remove python
+
+which python3
