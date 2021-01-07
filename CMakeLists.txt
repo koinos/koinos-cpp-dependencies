@@ -32,3 +32,5 @@ hunter_add_package(Boost COMPONENTS system log thread date_time filesystem chron
 hunter_add_package(nlohmann_json)
 hunter_add_package(OpenSSL)
 hunter_add_package(rocksdb)
+hunter_add_package(rabbitmq-c)
+
