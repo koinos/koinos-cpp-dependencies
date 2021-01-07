@@ -7,3 +7,5 @@ if [ "$CC" = "clang-11" ]; then
 fi
 
 pip3 install --user gitpython
+
+sudo apt-get remove --purge python
