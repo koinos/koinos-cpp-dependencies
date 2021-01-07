@@ -1,8 +1,14 @@
 cmake_minimum_required(VERSION 3.10.2)
 
-include("cmake/HunterGate.cmake")
-
 option(HUNTER_RUN_UPLOAD "Upload cache binaries" ON)
+
+set(
+   HUNTER_CACHE_SERVERS
+   "https://github.com/koinos/hunter-cache"
+   CACHE
+   STRING
+   "Default cache server"
+)
 
 set(
    HUNTER_PASSWORDS_PATH
@@ -16,13 +22,7 @@ set(HUNTER_DISABLE_BUILDS YES)
 
 option(HUNTER_STATUS_DEBUG "Print a lot of info" ON)
 
-set(
-   HUNTER_CACHE_SERVERS
-   "https://github.com/koinos/hunter-cache"
-   CACHE
-   STRING
-   "Default cache server"
-)
+include("cmake/HunterGate.cmake")
 
 HunterGate(
    URL "https://github.com/koinos/hunter/archive/rocksdb.tar.gz"
