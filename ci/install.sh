@@ -9,4 +9,5 @@ fi
 pip3 install --user gitpython
 
 sudo apt-get remove --purge python
-ls -la /usr
+ls -la /usr/bin
+ls -la /usr/sbin
