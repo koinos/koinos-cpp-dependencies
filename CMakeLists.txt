@@ -20,8 +20,6 @@ set(
 
 set(HUNTER_DISABLE_BUILDS YES)
 
-option(HUNTER_STATUS_DEBUG "Print a lot of info" ON)
-
 include("cmake/HunterGate.cmake")
 
 HunterGate(
@@ -31,8 +29,6 @@ HunterGate(
 )
 
 project(koinos-cpp-dependencies)
-
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 hunter_add_package(rocksdb)
 hunter_add_package(Boost COMPONENTS system log thread date_time filesystem chrono locale test program_options)
