@@ -6,4 +6,4 @@ if [ "$CC" = "clang-11" ]; then
    sudo apt-get install -y llvm-11 clang-11
 fi
 
-pip3 install --user gitpython
+pip install --user gitpython
