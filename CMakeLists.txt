@@ -14,11 +14,7 @@ set(
 
 set(HUNTER_DISABLE_BUILDS YES)
 
-HunterGate(
-   URL "https://github.com/koinos/hunter/archive/rocksdb.tar.gz"
-   SHA1 "b5dc3af780ba255ee6103bfc306403738735f420"
-   LOCAL
-)
+option(HUNTER_STATUS_DEBUG "Print a lot of info" ON)
 
 set(
    HUNTER_CACHE_SERVERS
@@ -26,6 +22,12 @@ set(
    CACHE
    STRING
    "Default cache server"
+)
+
+HunterGate(
+   URL "https://github.com/koinos/hunter/archive/rocksdb.tar.gz"
+   SHA1 "b5dc3af780ba255ee6103bfc306403738735f420"
+   LOCAL
 )
 
 project(koinos-cpp-dependencies)
