@@ -14,10 +14,6 @@ jobs:
       env:
         - MATRIX_EVAL="CC=clang-11 && CXX=clang++-11"
     - os: linux
-      dist: bionic
-      env:
-        - MATRIX_EVAL="CC=gcc && CXX=g++"
-    - os: linux
       dist: focal
       env:
         - MATRIX_EVAL="CC=gcc && CXX=g++"
