@@ -17,6 +17,10 @@ jobs:
       dist: focal
       env:
         - MATRIX_EVAL="CC=gcc && CXX=g++"
+    - os: linux
+      dist: focal
+      env:
+        - BUILD_DOCKER=1
 
 before_install:
   eval "${MATRIX_EVAL}"

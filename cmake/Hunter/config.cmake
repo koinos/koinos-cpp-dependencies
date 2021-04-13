@@ -1,5 +1,5 @@
 hunter_config(Boost
-   VERSION ${HUNTER_Boost_VERSION}
+   VERSION "1.72.0-p1"
    CMAKE_ARGS
       USE_CONFIG_FROM_BOOST=ON
       Boost_USE_STATIC_LIBS=ON
@@ -35,3 +35,9 @@ hunter_config(libsecp256k1
    SHA1 "0534fa8948f279b26fd102905215a56f0ad7fa18"
 )
 
+hunter_config(yaml-cpp
+   VERSION "0.6.3"
+   CMAKE_ARGS
+      CMAKE_CXX_FLAGS=-fvisibility=hidden
+      CMAKE_C_FLAGS=-fvisibility=hidden
+)
