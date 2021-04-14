@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! [ $BUILD_DOCKER ]; then
+if [[ -z $BUILD_DOCKER ]]; then
    if [ "$CC" = "clang-11" ]; then
       wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
       sudo apt-add-repository 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
