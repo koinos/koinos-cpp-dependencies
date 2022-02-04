@@ -29,6 +29,7 @@ HunterGate(
 project(koinos-cpp-dependencies)
 
 hunter_add_package(Boost COMPONENTS system log thread date_time filesystem chrono locale test program_options exception)
+hunter_add_package(ethash)
 hunter_add_package(libsecp256k1)
 hunter_add_package(nlohmann_json)
 hunter_add_package(OpenSSL)
@@ -36,3 +37,4 @@ hunter_add_package(Protobuf)
 hunter_add_package(rabbitmq-c)
 hunter_add_package(rocksdb)
 hunter_add_package(yaml-cpp)
+hunter_add_package(fizzy)
