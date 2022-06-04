@@ -16,7 +16,7 @@ RUN apk update && \
         python3 \
         py3-pip \
         py3-setuptools && \
-     pip3 install --user gitpython
+     pip3 install --user gitpython requests
 
 ADD . /koinos-cpp-dependencies
 WORKDIR /koinos-cpp-dependencies
