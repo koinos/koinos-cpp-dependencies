@@ -32,8 +32,8 @@ hunter_config(rocksdb
 )
 
 hunter_config(fizzy
-   URL "https://github.com/wasmx/fizzy/archive/86268ecd0e42f376b2e80d6e72ba8ec653099879.tar.gz"
-   SHA1 "c4af52631141582bce4f99ea6c404a80882a4c1d"
+   URL "https://github.com/koinos/fizzy/archive/928e89736c3dc26006858619c9267a0595d6dc5d.tar.gz"
+   SHA1 "b01e92622d11fedb69b603d9a6478449879f25d1"
 )
 
 hunter_config(rabbitmq-c
@@ -46,6 +46,11 @@ hunter_config(rabbitmq-c
 hunter_config(libsecp256k1
    URL "https://github.com/soramitsu/soramitsu-libsecp256k1/archive/c7630e1bac638c0f16ee66d4dce7b5c49eecbaa5.tar.gz"
    SHA1 "0534fa8948f279b26fd102905215a56f0ad7fa18"
+)
+
+hunter_config(libsecp256k1-vrf
+   URL "https://github.com/koinos/secp256k1-vrf/archive/db479e83be5685f652a9bafefaef77246fdf3bbe.tar.gz"
+   SHA1 "62df75e061c4afd6f0548f1e8267cc3da6abee15"
 )
 
 hunter_config(yaml-cpp
