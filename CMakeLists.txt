@@ -21,8 +21,8 @@ set(
 include("cmake/HunterGate.cmake")
 
 HunterGate(
-   URL "https://github.com/cpp-pm/hunter/archive/v0.23.313.tar.gz"
-   SHA1 "6c369e5aab2749a616917df3b23511535f413604"
+   URL "https://github.com/cpp-pm/hunter/archive/v0.24.12.tar.gz"
+   SHA1 "dd581578f2fa63deb89eaf4816fa7a4b3f27dac3"
    LOCAL
 )
 
@@ -38,3 +38,8 @@ hunter_add_package(rabbitmq-c)
 hunter_add_package(rocksdb)
 hunter_add_package(yaml-cpp)
 hunter_add_package(fizzy)
+hunter_add_package(gRPC)
+hunter_add_package(abseil)
+hunter_add_package(re2)
+hunter_add_package(c-ares)
+hunter_add_package(ZLIB)
