@@ -1,30 +1,28 @@
-cmake_minimum_required(VERSION 3.10.2)
+
+cmake_minimum_required(VERSION 3.19.0)
+
+cmake_policy(SET CMP0074 NEW)
+cmake_policy(SET CMP0114 NEW)
+
+if(${CMAKE_VERSION} VERSION_GREATER_EQUAL 3.24.0)
+  cmake_policy(SET CMP0135 NEW)
+endif()
+
+if(${CMAKE_VERSION} VERSION_GREATER_EQUAL 3.27.0)
+  cmake_policy(SET CMP0144 NEW)
+endif()
 
 option(HUNTER_RUN_UPLOAD "Upload cache binaries" ON)
 
-set(
-   HUNTER_CACHE_SERVERS
-   "https://github.com/koinos/hunter-cache"
-   CACHE
-   STRING
-   "Default cache server"
+include(FetchContent)
+FetchContent_Declare(
+  koinos_cmake
+  GIT_REPOSITORY https://github.com/koinos/koinos-cmake.git
+  GIT_TAG        f3d5dd68611a515837b2a038cc93365ad12e8c41
 )
+FetchContent_MakeAvailable(koinos_cmake)
 
-set(
-   HUNTER_PASSWORDS_PATH
-   "${CMAKE_CURRENT_LIST_DIR}/cmake/Hunter/passwords.cmake"
-   CACHE
-   FILEPATH
-   "Hunter passwords"
-)
-
-include("cmake/HunterGate.cmake")
-
-HunterGate(
-    URL "https://github.com/cpp-pm/hunter/archive/v0.24.14.tar.gz"
-    SHA1 "00901c19eefc02d24b16705b5f5a2b4f093a73fb"
-    LOCAL
-)
+include("${koinos_cmake_SOURCE_DIR}/Koinos.cmake")
 
 project(koinos-cpp-dependencies)
 
