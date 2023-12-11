@@ -15,7 +15,7 @@ RUN apk update && \
         perl \
         python3 \
         py3-pip \
-        py3-setuptools && \
+        py3-setuptools \
         py3-gitpython \
         py3-requests
 
