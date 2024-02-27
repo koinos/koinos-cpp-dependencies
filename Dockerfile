@@ -1,11 +1,11 @@
-FROM alpine:latest as builder
+FROM alpine:3.18 as builder
 
 ARG GITHUB_USER_PASSWORD
 
 RUN apk update && \
     apk add  \
-        gcc-12 \
-        g++-12 \
+        gcc \
+        g++ \
         musl-dev \
         linux-headers \
         libgmpxx \
@@ -17,6 +17,4 @@ RUN apk update && \
 ADD . /koinos-cpp-dependencies
 WORKDIR /koinos-cpp-dependencies
 
-ENV CC=gcc-12
-ENV CXX=g++-12
 RUN cmake -DCMAKE_BUILD_TYPE=Release .
