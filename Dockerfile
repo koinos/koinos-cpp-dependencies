@@ -1,4 +1,4 @@
-FROM alpine:latest as builder
+FROM alpine:3.18 as builder
 
 ARG GITHUB_USER_PASSWORD
 
