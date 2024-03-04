@@ -1,16 +1,7 @@
 
 cmake_minimum_required(VERSION 3.19.0)
 
-cmake_policy(SET CMP0074 NEW)
-cmake_policy(SET CMP0114 NEW)
-
-if(${CMAKE_VERSION} VERSION_GREATER_EQUAL 3.24.0)
-  cmake_policy(SET CMP0135 NEW)
-endif()
-
-if(${CMAKE_VERSION} VERSION_GREATER_EQUAL 3.27.0)
-  cmake_policy(SET CMP0144 NEW)
-endif()
+cmake_policy(VERSION 3.19.0...3.27.4)
 
 option(HUNTER_RUN_UPLOAD "Upload cache binaries" ON)
 
@@ -18,7 +9,7 @@ include(FetchContent)
 FetchContent_Declare(
   koinos_cmake
   GIT_REPOSITORY https://github.com/koinos/koinos-cmake.git
-  GIT_TAG        d060941a104a28dc3e407f1b44b3bf60ba1f9a9a
+  GIT_TAG        8b2059bb7882634432c8aac233278962696001df
 )
 FetchContent_MakeAvailable(koinos_cmake)
 
@@ -26,26 +17,29 @@ include("${koinos_cmake_SOURCE_DIR}/Koinos.cmake")
 
 project(koinos-cpp-dependencies)
 
-hunter_add_package(Boost COMPONENTS system log thread date_time filesystem chrono locale test program_options exception)
-hunter_add_package(ethash)
-hunter_add_package(libsecp256k1)
-hunter_add_package(nlohmann_json)
-hunter_add_package(OpenSSL)
-hunter_add_package(Protobuf)
-hunter_add_package(rabbitmq-c)
-hunter_add_package(rocksdb)
-hunter_add_package(yaml-cpp)
-hunter_add_package(fizzy)
-hunter_add_package(gRPC)
-hunter_add_package(abseil)
-hunter_add_package(re2)
-hunter_add_package(c-ares)
-hunter_add_package(ZLIB)
+koinos_add_package(Boost CONFIG REQUIRED
+  ADD_COMPONENTS system log thread date_time filesystem chrono test program_options exception
+  FIND_COMPONENTS system log log_setup thread date_time filesystem chrono program_options exception)
 
-hunter_add_package(koinos_log)
-hunter_add_package(koinos_util)
-hunter_add_package(koinos_proto)
-hunter_add_package(koinos_exception)
-hunter_add_package(koinos_crypto)
-hunter_add_package(koinos_mq)
-hunter_add_package(koinos_state_db)
+koinos_add_package(ethash CONFIG REQUIRED)
+koinos_add_package(libsecp256k1-vrf CONFIG REQUIRED)
+koinos_add_package(nlohmann_json CONFIG REQUIRED)
+koinos_add_package(OpenSSL REQUIRED)
+koinos_add_package(rabbitmq-c CONFIG REQUIRED)
+koinos_add_package(rocksdb NAME RocksDB CONFIG REQUIRED)
+koinos_add_package(yaml-cpp CONFIG REQUIRED)
+koinos_add_package(Protobuf CONFIG REQUIRED)
+koinos_add_package(fizzy CONFIG REQUIRED)
+koinos_add_package(gRPC CONFIG REQUIRED)
+koinos_add_package(abseil NAME absl CONFIG REQUIRED)
+koinos_add_package(re2 CONFIG REQUIRED)
+koinos_add_package(c-ares CONFIG REQUIRED)
+koinos_add_package(ZLIB CONFIG REQUIRED)
+
+koinos_add_package(koinos_log CONFIG REQUIRED)
+koinos_add_package(koinos_util CONFIG REQUIRED)
+koinos_add_package(koinos_proto CONFIG REQUIRED)
+koinos_add_package(koinos_exception CONFIG REQUIRED)
+koinos_add_package(koinos_crypto CONFIG REQUIRED)
+koinos_add_package(koinos_mq CONFIG REQUIRED)
+koinos_add_package(koinos_state_db CONFIG REQUIRED)
