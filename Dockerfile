@@ -12,6 +12,7 @@ RUN apk update && \
         cmake \
         make \
         git \
+        perl \
         python3 \
         py3-pip \
         py3-setuptools \
