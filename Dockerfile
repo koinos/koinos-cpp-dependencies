@@ -1,4 +1,4 @@
-FROM alpine:latest as builder
+FROM alpine:3.18 as builder
 
 ARG GITHUB_USER_PASSWORD
 
@@ -15,8 +15,9 @@ RUN apk update && \
         perl \
         python3 \
         py3-pip \
-        py3-setuptools && \
-     pip3 install --user gitpython requests
+        py3-setuptools \
+        py3-gitpython \
+        py3-requests
 
 ADD . /koinos-cpp-dependencies
 WORKDIR /koinos-cpp-dependencies
