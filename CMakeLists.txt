@@ -9,7 +9,7 @@ include(FetchContent)
 FetchContent_Declare(
   koinos_cmake
   GIT_REPOSITORY https://github.com/koinos/koinos-cmake.git
-  GIT_TAG        8b2059bb7882634432c8aac233278962696001df
+  GIT_TAG        0c8433a118eb4cd5a86bb7ac4708a38db8166801
 )
 FetchContent_MakeAvailable(koinos_cmake)
 
@@ -36,10 +36,3 @@ koinos_add_package(re2 CONFIG REQUIRED)
 koinos_add_package(c-ares CONFIG REQUIRED)
 koinos_add_package(ZLIB CONFIG REQUIRED)
 
-koinos_add_package(koinos_log CONFIG REQUIRED)
-koinos_add_package(koinos_util CONFIG REQUIRED)
-koinos_add_package(koinos_proto CONFIG REQUIRED)
-koinos_add_package(koinos_exception CONFIG REQUIRED)
-koinos_add_package(koinos_crypto CONFIG REQUIRED)
-koinos_add_package(koinos_mq CONFIG REQUIRED)
-koinos_add_package(koinos_state_db CONFIG REQUIRED)
